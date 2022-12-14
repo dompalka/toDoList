@@ -16,15 +16,23 @@
     for (const task of tasks) {
       htmlString += `
         <li${task.done ? ' style="text-decoration: line-through"' : ""}>
-         ${task.content}
+         ${task.content}<button class="js-remove">Remove</button>
         </li>
         `;
     }
 
     document.querySelector(".js-tasks").innerHTML = htmlString;
+
+    const removeButtons = document.querySelectorAll(".js-remove");
+
+    removeButtons.forEach((removeButton, index) => {
+      removeButton.addEventListener("click", () => {
+        removeTask(index);
+      });
+    });
   };
 
-  const addNewTask = () => {
+  const addNewTask = (newTaskContent) => {
     tasks.push({
       content: newTaskContent,
     });
@@ -32,18 +40,19 @@
     render();
   };
 
-  const onFormSubmit = () => {
-    (event) => {
-      event.preventDefault();
+  const removeTask = (index) => {
+    tasks.splice(index, 1);
+    render();
+  };
 
-      const newTaskContent = document
-        .querySelector(".js-newInput")
-        .value.trim();
+  const onFormSubmit = (event) => {
+    event.preventDefault();
 
-      if (newTaskContent === "") return;
+    const newTaskContent = document.querySelector(".js-newInput").value.trim();
 
-      addNewTask(newTaskContent);
-    };
+    if (newTaskContent === "") return;
+
+    addNewTask(newTaskContent);
   };
 
   const init = () => {
