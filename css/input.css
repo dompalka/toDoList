@@ -1,0 +1,16 @@
+.taskInput {
+    background-color: #fff;
+    border: 1px solid #eee;
+  }
+  
+  .taskList {
+    background-color: #fff;
+    border: 1px solid #eee;
+    margin: 12px auto;
+    width: 100%;
+  }
+  
+  .taskInput__textArea {
+    border: 1px solid #eee;
+    padding: 24px;
+  }
