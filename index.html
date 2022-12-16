@@ -18,6 +18,8 @@
       rel="stylesheet"
     />
     <link href="css/stlye.css" rel="stylesheet" />
+    <link href="css/input.css" rel="stylesheet" />
+    <link href="css/list.css" rel="stylesheet" />
     <script defer src="js/script.js"></script>
     <title>To Do List</title>
   </head>
@@ -25,8 +27,8 @@
     <main class="container">
       <header><h1>Lista zadań</h1></header>
       <section class="taskInput">
-        <h2>Dodaj nowe zadanie</h2>
-        <div>
+        <h2 class="taskInput__header">Dodaj nowe zadanie</h2>
+        <div class="taskInput__textArea">
           <form class="js-form">
             <input class="js-newInput" />
             <button class="js-button">Dodaj Zadanie</button>
@@ -34,8 +36,8 @@
         </div>
       </section>
       <section class="taskList">
-        <h2>Lista zadań</h2>
-        <div><ul class="js-tasks"></ul></div>
+        <h2 class="taskList__header">Lista zadań</h2>
+        <div class="taskList__content"><ul class="js-tasks"></ul></div>
       </section>
     </main>
   </body>
