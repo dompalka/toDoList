@@ -1,8 +1,17 @@
 html {
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  background-color: #eee;
 }
 
 *,
 ::after::before {
   box-sizing: inherit;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 24px auto;
+  width: 80%;
 }
