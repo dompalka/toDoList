@@ -51,9 +51,9 @@
 
     for (const task of tasks) {
       htmlString += `
-        <li class="list__item${task.done ? " list__item--done" : ""}">
-        <button class="js-done">Completed</button>${task.content}
-         <button class="js-remove">usuń</button>
+        <li class="taskList__item${task.done ? " taskList__item--done" : ""}">
+        <button class="js-done taskList__complete"></button>${task.content}
+         <button class="js-remove">&#128465</button>
         </li>
         `;
     }
@@ -61,6 +61,11 @@
     document.querySelector(".js-tasks").innerHTML = htmlString;
 
     bindEvents();
+  };
+
+  const clearInput = () => {
+    document.querySelector(".js-newInput").focus();
+    document.querySelector(".js-newInput").value = null;
   };
 
   const onFormSubmit = (event) => {
@@ -71,6 +76,17 @@
     if (newTaskContent === "") return;
 
     addNewTask(newTaskContent);
+
+    clearInput();
+  };
+
+  const textFocus = () => {
+    const inputButton = document.querySelector(".js-button");
+    const taskContent = document.querySelector(".js-newInput");
+
+    inputButton.addEventListener("click", () => {
+      taskContent.focus();
+    });
   };
 
   const init = () => {
@@ -79,6 +95,8 @@
     const form = document.querySelector(".js-form");
 
     form.addEventListener("submit", onFormSubmit);
+
+    textFocus();
   };
 
   init();
