@@ -3,14 +3,35 @@
   box-shadow: 0px 0px 2px 0px #ccc;
 }
 
-.taskInput__textArea {
+.taskInput__textSection {
   border-top: 1px solid #eee;
-  padding: 24px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  column-gap: 16px;
+  grid-template-areas: "input button";
 }
 
 .taskInput__header {
   border-bottom: 1px solid #eee;
-  padding: 24px;
+  padding: 20px;
   margin: 0;
   font-weight: 900;
+}
+
+.taskInput__textBox {
+  grid-area: input;
+  border: 2px solid #eee;
+  padding: 8px;
+}
+.taskInput__button {
+  grid-area: button;
+  border: none;
+  background-color: #008080;
+  color: #fff;
+  padding: 8px;
+}
+
+.taskInput__button:active {
+  border: 1px solid #000;
 }

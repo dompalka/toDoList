@@ -2,6 +2,7 @@ html {
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
   background-color: #eee;
+  word-break: break-word;
 }
 
 *,
@@ -14,4 +15,8 @@ html {
   flex-direction: column;
   margin: 24px auto;
   width: 80%;
+}
+
+.mainHeader{
+  font-weight: 900;
 }
