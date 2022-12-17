@@ -14,7 +14,7 @@
 
 .taskList__content {
   border-top: 1px solid #eee;
-  padding: 20px;
+  padding: 16px;
 }
 
 .taskList__mainList {
@@ -24,13 +24,44 @@
 
 .taskList__item {
   display: grid;
-  grid-template-columns: 1fr 18fr 0fr;
+  grid-template-columns: 1fr 25fr;
   grid-auto-rows: auto;
   grid-template-areas: "complete input button";
   border-bottom: 2px solid #eee;
   padding: 12px;
   align-items: center;
   height: fit-content;
+}
+
+@media (max-width: 1200px) {
+  .taskList__item {
+    grid-template-columns: 1fr 20fr;
+  }
+}
+@media (max-width: 992px) {
+  .taskList__item {
+    grid-template-columns: 1fr 16fr;
+  }
+}
+@media (max-width: 769px) {
+  .taskList__item {
+    grid-template-columns: 1fr 12fr;
+  }
+}
+@media (max-width: 733px) {
+  .taskList__item {
+    grid-template-columns: 1fr 10fr;
+  }
+}
+@media (max-width: 592px) {
+  .taskList__item {
+    grid-template-columns: 1fr 8fr;
+  }
+}
+@media (max-width: 414px) {
+  .taskList__item {
+    grid-template-columns: 1fr 5fr;
+  }
 }
 
 .taskList__complete {

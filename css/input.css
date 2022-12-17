@@ -12,6 +12,18 @@
   grid-template-areas: "input button";
 }
 
+@media (max-width: 1076px) {
+  .taskInput__textSection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "input input"
+      "button button";
+      row-gap: 8px;
+  }
+}
+
 .taskInput__header {
   border-bottom: 1px solid #eee;
   padding: 20px;
